@@ -1,0 +1,106 @@
+/* Estilo general del cuerpo */
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Estilo del título */
+h1 {
+  text-align: center;
+  font-size: 42px;
+  color: #ffffff;
+  margin-bottom: 40px;
+  font-weight: 700;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Estilo de la tabla periódica */
+.tabla-periodica {
+  display: grid;
+  grid-template-columns: repeat(18, 50px);
+  gap: 5px;
+  margin: 0 auto 30px auto;
+  width: max-content;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 3px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+/* Estilo base para los elementos */
+.elem {
+  border: 2.5px solid #2c3e50;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  background: white;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border-radius: 2px;
+  height: 50px;
+  color: #000;
+  position: relative;
+  overflow: hidden;
+}
+/* Para  el efecto de brillo */
+.elem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.elem:hover::before {
+  left: 100%;
+}
+
+/* Colores de las secciones
+es mas facil poner los colores :D */
+.sec-1 { background: #F7CAAC; }
+.sec-2 { background: #FFE599; }
+.sec-3 { background: #FFFF00; }
+.sec-4 { background: #8EAADB; }
+.sec-5 { background: #68FB61; }
+.sec-6 { background: #DDABFF; }
+.sec-7 { background: #FF66FF; }
+.sec-8 { background: #00CCFF; }
+
+
+.elem:hover {
+  background: #031FA2 !important;
+  color: white;
+  transform: scale(1.15) translateY(-3px);
+  box-shadow: 0 8px 20px rgba(3, 31, 162, 0.5), 0 0 0 3px rgba(3, 31, 162, 0.2);
+  z-index: 10;
+  border-color: #031FA2;
+}
+
+/* Estilo de los párrafos (nombres del grupo) */
+p {
+  text-align: center;
+  font-size: 18px;
+  margin: 10px 0;
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.5px;
+}
+
+p:first-of-type {
+  font-size: 22px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
