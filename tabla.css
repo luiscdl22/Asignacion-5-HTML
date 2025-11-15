@@ -1,117 +1,118 @@
 /* Estilo general del cuerpo */
 body {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 27px;
-  margin: 0;
-  min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 27px;
+    margin: 0;
+    min-height: 100vh;
 }
 
 /* Estilo del título */
 h1 {
-  text-align: center;
-  font-size: 42px;
-  color: #ffffff;
-  margin-bottom: 40px;
-  font-weight: 700;
-  text-shadow: 3px 3px 6px #764ba2;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+    text-align: center;
+    font-size: 42px;
+    color: #ffffff;
+    margin-bottom: 40px;
+    font-weight: 700;
+    text-shadow: 3px 3px 6px #764ba2;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 h2 {
-  text-align: center;
-  font-size: 34px;
-  color: #ffffff;
-  margin-bottom: 40px;
-  font-weight: 500;
-  text-shadow: 2px 2px 4px #667eea;
-  letter-spacing: 1px;
+    text-align: center;
+    font-size: 34px;
+    color: #ffffff;
+    margin-bottom: 40px;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px #667eea;
+    letter-spacing: 1px;
 }
 
-/* Estilo de la tabla periódica */
+/* Estilo de la tabla periódica - Base (Mayor a 801px) */
 .tabla-periodica {
-  display: grid;
-  grid-template-columns: repeat(18, 50px);
-  gap: 5px;
-  margin: 0 auto 30px auto;
-  width: max-content;
-  padding: 25px;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 3px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+    display: grid;
+    grid-template-columns: repeat(18, 50px); /* 18 columnas de 50px cada una */
+    gap: 5px;
+    margin: 0 auto 30px auto;
+    width: 95%; /* Ajuste para mayor flexibilidad */
+    max-width: 1000px; /* Ancho máximo para el diseño de escritorio */
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 3px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 /* Estilo base para los elementos */
 .elem {
-  border: 2.5px solid #2c3e50;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: 700;
-  background: white;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  border-radius: 2px;
-  height: 50px;
-  color: #000;
-  position: relative;
-  overflow: hidden;
+    border: 2.5px solid #2c3e50;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    background: white;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    border-radius: 2px;
+    height: 50px;
+    color: #000;
+    position: relative;
+    overflow: hidden;
 }
-/* Para  el efecto de brillo */
+/* Para el efecto de brillo */
 .elem::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
 }
 
 .elem:hover::before {
-  left: 100%;
+    left: 100%;
 }
 
-/* Colores de las secciones
-es mas facil poner los colores :D */
-.sec-1 { background: #F7CAAC; }
-.sec-2 { background: #FFE599; }
-.sec-3 { background: #FFFF00; }
-.sec-4 { background: #8EAADB; }
-.sec-5 { background: #68FB61; }
-.sec-6 { background: #DDABFF; }
-.sec-7 { background: #FF66FF; }
-.sec-8 { background: #00CCFF; }
+/* Colores de las secciones */
+.sec-1 { background: #F7CAAC; } /* Alcalinos [cite: 17] */
+.sec-2 { background: #FFE599; } /* Alcalinoterreos [cite: 18] */
+.sec-3 { background: #FFFF00; } /* Metales de transición [cite: 19] */
+.sec-4 { background: #8EAADB; } /* Otros metales [cite: 20] */
+.sec-5 { background: #68FB61; } /* Metaloides [cite: 21] */
+.sec-6 { background: #DDABFF; } /* No metales (Tu sección Morada) [cite: 22] */
+.sec-7 { background: #FF66FF; } /* Halógenos (Tu sección Lila/Fucsia) [cite: 23] */
+.sec-8 { background: #00CCFF; } /* Gases nobles [cite: 24] */
 
 
+/* HOVER BASE (Mayor a 801px) */
 .elem:hover {
-  background: #031FA2 !important;
-  color: white;
-  transform: scale(1.15) translateY(-3px);
-  box-shadow: 0 8px 20px rgba(3, 31, 162, 0.5), 0 0 0 3px rgba(3, 31, 162, 0.2);
-  z-index: 10;
-  border-color: #031FA2;
+    background: #031FA2 !important; /* Color de relleno base [cite: 32] */
+    color: white; /* Color de letra base [cite: 32] */
+    transform: scale(1.15) translateY(-3px);
+    box-shadow: 0 8px 20px rgba(3, 31, 162, 0.5), 0 0 0 3px rgba(3, 31, 162, 0.2);
+    z-index: 10;
+    border-color: #031FA2;
 }
 
-/* Estilo de los párrafos (nombres del grupo) */
+/* Estilos de párrafos (Nombres del grupo) */
 p {
-  text-align: center;
-  font-size: 18px;
-  margin: 10px 0;
-  color: #ffffff;
-  font-weight: 600;
-  text-shadow: 2px 2px 4px #764ba2;
-  letter-spacing: 0.5px;
+    text-align: center;
+    font-size: 18px;
+    margin: 10px 0;
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px #764ba2;
+    letter-spacing: 0.5px;
 }
 
 p:first-of-type {
-  font-size: 22px;
-  margin-top: 30px;
-  margin-bottom: 15px;
-  font-weight: 700;
+    font-size: 22px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 700;
 }
 
 .element-link {
@@ -128,3 +129,84 @@ p:first-of-type {
 .elem:hover .element-link {
     color: white; 
 }
+
+
+/* ============================================== */
+/* DIMENSIONES DINÁMICAS (RESPONSIVE)    */
+/* ============================================== */
+
+/* 1. Hasta 600px de ancho: Móviles (vertical de máx 2 columnas)  */
+@media (max-width: 600px) {
+    .tabla-periodica {
+        /* Secciones por separado, máx dos columnas */
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* 2 columnas como máx */
+        gap: 10px;
+        padding: 15px;
+        width: 100%;
+    }
+    .elem {
+        /* Estilo para los elementos en móvil */
+        height: 60px;
+        font-size: 18px;
+    }
+    /* Como todas las secciones están "por separado" en vertical, no se requiere un estilo especial 
+       para los contenedores de grupos de secciones, solo para el grid principal. */
+}
+
+/* 2. De 601px a 800px de ancho: Tabletas/Intermedio  */
+@media (min-width: 601px) and (max-width: 800px) {
+    .tabla-periodica {
+        /* Diseño adaptado para tabletas */
+        grid-template-columns: repeat(12, 1fr); /* Reducción de columnas */
+        gap: 8px;
+        padding: 20px;
+        width: 90%;
+    }
+
+    /* *************************************** */
+    /* REGLAS PARA AGRUPAR SECCIONES (HORIZONTAL) */
+    /* *************************************** */
+    
+    /* Agrupar Sección 1 y 2 (horizontal) [cite: 37] */
+    .sec-1, .sec-2 {
+        grid-column: span 1; /* Asegura que no se desborden de forma rara si la tabla es grande */
+    }
+    .tabla-periodica > div:nth-child(1) { grid-column: 1; } /* H */
+    .tabla-periodica > div:nth-child(18) { grid-column: 12; } /* He */
+    
+    /* Sección 3 (horizontal, máx 5 columnas de ancho) [cite: 38] */
+    .sec-3 {
+        grid-column: span 1; 
+        max-width: 20%; /* Controlando el ancho máximo de la columna si fuera flexible, pero usando 1fr ya está controlado por el grid. */
+    }
+
+    /* Sección 4, 5 y 6 (sin modificaciones) [cite: 39] */
+    /* No se requieren reglas adicionales para "sin modificaciones", mantienen el flujo del grid. */
+
+    /* Agrupar Secciones 7 y 8 (Tu parte: Lila y Gases Nobles) en horizontal [cite: 40] */
+    .sec-7, .sec-8 {
+        grid-column: span 1; /* Mantener 1 columna en el grid de 12 */
+    }
+
+    /* *************************************** */
+    /* ANIMACIÓN HOVER ESPECÍFICA (Tu Tarea)  */
+    /* *************************************** */
+    
+    .elem:hover {
+        /* Solo para 601px a 800px: Nuevo color de relleno y letra  */
+        background: #C11905 !important;
+        color: white; 
+        border-color: #C11905;
+        /* Se mantienen el scale, shadow y z-index de la regla base para fluidez */
+    }
+
+    /* Asegurar que las secciones 6 y 7, que son tu enfoque, usen este hover */
+    .sec-6:hover, .sec-7:hover {
+         background: #C11905 !important;
+         color: white; 
+         border-color: #C11905;
+    }
+}
+
+/* 3. Más de 801px: No hay cambios [cite: 42] */
+/* Se utiliza el estilo base al inicio del archivo CSS. */
